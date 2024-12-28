@@ -1,1 +1,1 @@
-{"john": {"password": "password", "firstname": "John", "lastname": "Connor", "email": "j.connor@gmail.com"}, "sarah": {"password": "password", "firstname": "Sarah", "lastname": "Connor", "email": "s.connor@gmail.com"}}
+{"john": {"password": "$2b$12$ZS5Xjw7oAbJO6rseArZtJ.ridJ8LCB2nPkzBMp5xeyfXfJ.XgMvnC", "firstname": "John", "lastname": "Connor", "email": "j.connor@gmail.com"}, "sarah": {"password": "$2b$12$8Jx0wo1lVHkEfYo2W1ibguvMwJLLHWETX3uzV17Uo6WvqRz9hWbh6", "firstname": "Sarah", "lastname": "Connor", "email": "s.connor@gmail.com"}}
