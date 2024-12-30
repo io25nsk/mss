@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str
     JWT_TOKEN_EXPIRE_TIME: int
 
-    model_config = SettingsConfigDict(env_file='.env')
+    model_config = SettingsConfigDict(env_file=".env")
 
 
 settings = Settings()
