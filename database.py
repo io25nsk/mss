@@ -1,14 +1,9 @@
-users = {
-    'john': {
-        'password': 'password',
-        'firstname': 'John',
-        'lastname': 'Connor',
-        'email': 'j.connor@gmail.com'
-    },
-    'sarah': {
-        'password': 'password',
-        'firstname': 'Sarah',
-        'lastname': 'Connor',
-        'email': 's.connor@gmail.com'
-    }
-}
+from motor.motor_asyncio import AsyncIOMotorClient
+
+from settings import settings
+
+
+DB_URI = f"{settings.DB_PREFIX}://{settings.DB_HOST}:{settings.DB_PORT}/"
+CLIENT = AsyncIOMotorClient(DB_URI)
+DB = CLIENT.mss
+USERS_COLLECTION = DB.users
