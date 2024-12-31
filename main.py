@@ -1,3 +1,5 @@
+from datetime import date
+
 from fastapi import FastAPI, HTTPException
 from passlib.context import CryptContext
 
@@ -9,6 +11,9 @@ password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 app = FastAPI()
 
+NY_BEGIN_DAY = date(2024, 12, 30)
+NY_END_DAY = date(2025, 1, 5)
+greeting = ("Hello", "Happy New Year")[NY_BEGIN_DAY <= date.today() <= NY_END_DAY]
 
 @app.get("/")
 async def index_page():
@@ -21,7 +26,7 @@ async def login(login_data: LoginData) -> dict:
 
     if user := await USERS_COLLECTION.find_one({"username": username}):
         if password_context.verify(password, user["password"]):
-            return {"Message": f"Hello {user['firstname']} {user['lastname']}!"}
+            return {"Message": f"{greeting} {user['firstname']} {user['lastname']}!"}
 
     raise HTTPException(status_code=400, detail="Incorrect username or password!")
 
